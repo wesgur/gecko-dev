@@ -1,0 +1,25 @@
+From ef32337162c138fcbfa873a7645321dd99888920 Mon Sep 17 00:00:00 2001
+From: "Dong Hyuk (Johnny) Jin" <wesgur@gmail.com>
+Date: Wed, 6 Nov 2019 19:25:35 -0500
+Subject: [PATCH] Fixed mCredentialsMode to aCredentialsMode in CORSHeader
+
+---
+ dom/fetch/InternalHeaders.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dom/fetch/InternalHeaders.h b/dom/fetch/InternalHeaders.h
+index bd7796862df5..da02c00597c4 100644
+--- a/dom/fetch/InternalHeaders.h
++++ b/dom/fetch/InternalHeaders.h
+@@ -115,7 +115,7 @@ class InternalHeaders final {
+
+   static already_AddRefed<InternalHeaders> CORSHeaders(
+       InternalHeaders* aHeaders,
+-      RequestCredentials mCredentialsMode = RequestCredentials::Omit);
++      RequestCredentials aCredentialsMode = RequestCredentials::Omit);
+ 
+   void GetEntries(nsTArray<InternalHeaders::Entry>& aEntries) const;
+ 
+-- 
+2.17.1
+
